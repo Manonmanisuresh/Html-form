@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple E-commerce</title>
+  <link rel="stylesheet" href="Manonmani_s_form.css">
+</head>
+<body>
+  <div id="full">
+  <div id="head">
+    <div class="head1"><div><h3>MINIATURES E-MARKET</h3></div>
+    <h5>All Your Favourite miniatures at One Place</h5></div>
+    <div class="head1"> <div class="cart" id="cart">Cart: 0</div>
+    <button id="buyNowBtn">Buy Now</button></div>
+  
+  </div>
+  <div id="container">
+    <div id="row1">
+  <div class="product">
+    <img src="https://www.superherotoystore.com/cdn/shop/files/AAAI367AABU195-1_400x.jpg?v=1687515432" alt="Ant-man">
+    <h4>ANT-MAN BY LEGO</h4>
+    <p>Price: $19.99</p>
+    <button class="addToCartBtn">Add to Cart</button>
+  </div>
+<br>
+
+  <div class="product">
+    <img src="https://www.superherotoystore.com/cdn/shop/products/98540b766e5f4e488d691e2293a6100fxl_400x.jpg?v=1675483117" alt="Groot">
+    <h4>I AM GROOT BY LEGO</h4>
+    <p>Price: $19.99</p>
+    <button class="addToCartBtn">Add to Cart</button>
+  </div>
+  <br>
+  <div class="product">
+    <img src="https://www.superherotoystore.com/cdn/shop/products/AADM98AABU34-1_5000x.jpg?v=1681298133" alt="Venom">
+    <h4>VENOM FIGURE BY LEGO</h4>
+    <p>Price: $34.99</p>
+    <button class="addToCartBtn">Add to Cart</button>
+  </div>
+  <br>
+  <div class="product">
+    <img src="https://www.superherotoystore.com/cdn/shop/products/AADM365AABU33-1_5000x.jpg?v=1681297663" alt="Spiderman">
+    <h4>SPIDERMAN BY LEGO</h4>
+    <p>Price: $34.99</p>
+    <button class="addToCartBtn">Add to Cart</button>
+  </div>
+</div>
+  <br>
+  <div id="row2">
+  <div class="product">
+    <img src="https://www.superherotoystore.com/cdn/shop/files/1_c9cc05b5-a3c3-4063-ab08-dc87b1432769_5000x.jpg?v=1706597600" alt="S.K.">
+    <h4>SHINKOCCHOU SEIHOU</h4>
+    <p>Price: $34.99</p>
+    <button class="addToCartBtn">Add to Cart</button>
+  </div>
+  <br>
+  <div class="product">
+    <img src="https://www.superherotoystore.com/cdn/shop/files/1_76ec2bc4-02cc-4b99-ab94-b47099d233de_400x.jpg?v=1706597274" alt="Robot">
+    <h4>THE ROBOT SPIRITS BY BANDAI</h4>
+    <p>Price: $34.99</p>
+    <button class="addToCartBtn">Add to Cart</button>
+  </div>
+  <br>
+  <div class="product">
+    <img src="https://www.superherotoystore.com/cdn/shop/files/Untitleddesign_42_0e4d07d2-884a-4bbd-a5c2-6b4fad72d29b_400x.jpg?v=1706530572" alt="Wall-E Master">
+    <h4>WALL-E MASTER STATUE BY BEAST KINGDOM</h4>
+    <p>Price: $34.99</p>
+    <button class="addToCartBtn">Add to Cart</button>
+  </div>
+  <br>
+  <div class="product">
+    <img src="https://www.superherotoystore.com/cdn/shop/files/10_2bdd558b-4625-46b2-aac2-b9b5f0e2015d_400x.jpg?v=1706528132" alt="Bane">
+    <h4>BANE STATUE BY XM STUDIOS</h4>
+    <p>Price: $34.99</p>
+    <button class="addToCartBtn">Add to Cart</button>
+  </div>
+</div>
+</div>
+ 
+</div>
+<script>
+  let cartCount = 0;
+
+function updateCartCount() {
+  document.getElementById('cart').innerText = `Cart: ${cartCount}`;
+}
+
+const addToCartButtons = document.querySelectorAll('.addToCartBtn');
+addToCartButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    cartCount++;
+    updateCartCount();
+  });
+});
+
+document.getElementById('buyNowBtn').addEventListener('click', function() {
+  if (cartCount === 0) {
+    alert("Your cart is empty. Please add items to your cart before buying.");
+  } else {
+    alert("Your order has been placed. Thank you for shopping with us!");
+    cartCount = 0;
+    updateCartCount();
+  }
+});
+</script>
+ 
+</body>
+</html>
